@@ -44,7 +44,7 @@ def handler(event, context):
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS'
         },
-        "body": {json.dumps(response.get('data', {}))}
+        "body": json.dumps(response['data'])
         }
     except Exception as err:
         traceback.print_exc()
@@ -86,8 +86,8 @@ def save_impact_data(data, ddb):
     ddb: dynamodb botocore instance.
     """
     try:
-        tbl_impact_detail = os.environ.['TBL_IMPACT_DETAIL']
-        tbl_impact_contrib = os.environ.get['TBL_IMPACT_CONTRIBUTION']
+        tbl_impact_detail = os.environ['TBL_IMPACT_DETAIL']
+        tbl_impact_contrib = os.environ['TBL_IMPACT_CONTRIBUTION']
         tid, tic = ddb.Table(tbl_impact_detail), ddb.Table(tbl_impact_contrib)
         details = data.get('detail', None)
         contributions = data.get('contribution', None)

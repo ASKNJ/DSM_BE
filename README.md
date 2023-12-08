@@ -1,11 +1,11 @@
 # DSM_BE
 5 tables:
-Above 3 tables are master tables: Assumption is to make it as a master object on front end within context manager:
+* Above 3 tables are master tables: Assumption is to make it as a master object on front end within context manager:
 1. categories
 2. impacts_types
 3. contributions
 
-Other two tables are transactional with db interactions to put items:
+* Other two tables are transactional with db interactions to put items:
 4. impact_details - for saving impacts within a category and the impact percent in the category.
 5. impact_contributions - for saving how much percent category has contributed and how much other external details contributed.
 ==================================================================================================================================

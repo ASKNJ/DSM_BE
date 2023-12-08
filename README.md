@@ -1,6 +1,6 @@
 # DSM_BE
 5 tables:
-Above 3 tables are master tables: Assumption is to make it as a master object on front end within context manager:
+* Above 3 tables are master tables: Assumption is to make it as a master object on front end within context manager:
 1. categories
 2. impacts_types
 3. contributions
